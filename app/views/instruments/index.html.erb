@@ -1,0 +1,12 @@
+<h1>Instruments</h1>
+<%= link_to "Add an instrument", instruments_new_path %>
+
+<div>
+<% @instruments.each do |instrument| %>
+<h2><%= instrument.title %></h2>
+<p><%= instrument.description %></p>
+<%= link_to "details", instruments_show(instrument) %>
+<%= link_to	"edit", instruments_edit(instrument) %>
+<%= link_to "delete", instruments_destroy(instrument), method: :delete %>
+<% end %>
+</div>
