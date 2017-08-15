@@ -1,6 +1,6 @@
 class InstrumentsController < ApplicationController
   before_action :set_instrument, only: [:show, :edit, :update, :destroy]
-  
+
   def index
     @instruments = Instrument.all
   end
@@ -14,6 +14,7 @@ class InstrumentsController < ApplicationController
 
   def create
     @instrument = Instrument.new(instrument_params)
+    @instrument.user = current_user
     if @instrument.save
       redirect_to instrument_path(@instrument)
     else
@@ -44,7 +45,7 @@ class InstrumentsController < ApplicationController
   end
 
   def instrument_params
-    params.require(:instrument).permit(:title, :description, :location, :price, :photo)
+    params.require(:instrument).permit(:title, :description, :location, :price, :photo, :category_id)
   end
 
 end
