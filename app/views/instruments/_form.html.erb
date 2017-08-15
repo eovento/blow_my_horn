@@ -1,5 +1,9 @@
 <%= simple_form_for @instrument do |f| %>
-	<%= f.input :title, input_html: {class: "test"} %>
-	<%= f.input description, input_html: {class: "test"} %>
-	<%= f.submit class: "btn" %>
-	<% end %>
+	<%= f.input :title %>
+	<%= f.input :description %>
+  <%= f.input :price %>
+  <%= f.input :title %>
+  <%= f.input :location %>
+  <%= f.input :photo, as: :attachinary %>
+	<%= f.submit class: "btn btn-primary" %>
+<% end %>
