@@ -1,3 +1,3 @@
 class Instrument < ApplicationRecord
-  has_attachment :photos
+  has_attachment :photo
 end
