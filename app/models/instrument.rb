@@ -1,4 +1,6 @@
 class Instrument < ApplicationRecord
+  has_attachment :photo
+
   belongs_to :user
   belongs_to :category
 
