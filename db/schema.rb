@@ -35,9 +35,8 @@ ActiveRecord::Schema.define(version: 20170815154007) do
   end
 
   create_table "rentals", force: :cascade do |t|
-    t.date     "checkout"
-    t.date     "checkin"
-    t.boolean  "blocked"
+    t.date     "start_date"
+    t.date     "end_date"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
     t.integer  "user_id"
