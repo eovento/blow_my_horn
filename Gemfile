@@ -29,3 +29,4 @@ end
 
 # Gemfile
 gem 'devise'
+gem 'omniauth-facebook'
