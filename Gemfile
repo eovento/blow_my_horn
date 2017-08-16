@@ -11,6 +11,11 @@ gem 'cloudinary', '1.1.7'
 gem 'attachinary', github: 'assembler/attachinary'
 gem 'jquery-fileupload-rails'
 gem 'coffee-rails'
+gem "gmaps4rails"
+
+source 'https://rails-assets.org' do
+  gem "rails-assets-underscore"
+end
 
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass'
@@ -35,3 +40,9 @@ gem 'devise'
 gem 'omniauth-facebook'
 gem 'pg_search'
 gem "geocoder"
+
+#DateTimePicker
+gem 'momentjs-rails', '>= 2.9.0'
+gem 'bootstrap3-datetimepicker-rails', '~> 4.17.47'
+
+

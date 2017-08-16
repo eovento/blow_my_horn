@@ -58,10 +58,11 @@ users = [
   }
 ]
 User.create!(users)
-puts 'Finished!'
 
+puts "Finished"
 
-puts "Creating Istruments"
+puts "Creating Istruments with pictures"
+
 instruments = [
   {
     title:         "Acoustic Guitar",
@@ -69,8 +70,8 @@ instruments = [
     price:         "100",
     location:      "Rua Major Rubens Vaz, 456, Gávea, Rio de Janeiro, RJ",
     user_id:       "1",
-    category_id:   "2"
-
+    category_id:   "2",
+    photo_url:     "https://upload.wikimedia.org/wikipedia/commons/6/6e/Classical_Guitar_two_views2.png"
   },
   {
     title:         "Fender Stratocaster Guitar",
@@ -78,7 +79,8 @@ instruments = [
     price:         "15",
     location:      "Rua Duque Estrada, 42, Gávea, Rio de Janeiro, RJ",
     user_id:       "2",
-    category_id:   "2"
+    category_id:   "2",
+    photo_url:     "http://www.fmicassets.com/Damroot/ZoomJpg/10001/0144602580_gtr_frt_001_rr.jpg"
   },
   {
     title:         "Samba Drums",
@@ -86,7 +88,8 @@ instruments = [
     price:         "120",
     location:      "Rua Marquês de São Vicente, 42, Gávea, Rio de Janeiro, RJ",
     user_id:       "3",
-    category_id:   "1"
+    category_id:   "1",
+    photo_url:     "http://correiorural.com.br/jornalcr/wp-content/uploads/2011/11/instrumentos_2.jpg"
   },
   {
     title:         "Stradivarius Violin",
@@ -94,7 +97,8 @@ instruments = [
     price:         "5000",
     location:      "Rua da Lapa, 10, Lapa, Rio de Janeiro, RJ",
     user_id:       "4",
-    category_id:   "6"
+    category_id:   "6",
+    photo_url:     "http://www.operamundi.com.br/media/images/1024px-Stradivarius_violin,_Palacio_Real,_Madrid.jpg"
   },
   {
     title:         "Korg Keyboard",
@@ -102,7 +106,8 @@ instruments = [
     price:         "70",
     location:      "Rua Casuarina, 15, Itaipava, Petrópolis, RJ",
     user_id:       "5",
-    category_id:   "3"
+    category_id:   "3",
+    photo_url:     "https://www.musik-produktiv.co.uk/pic-010081220xxl/korg-pa4x-musikant-76.jpg" 
   },
   {
     title:         "Transversal Flute",
@@ -110,7 +115,8 @@ instruments = [
     price:         "30",
     location:      "Av. Brasil, 100, Bonsucesso, Rio de Janeiro, RJ",
     user_id:       "6",
-    category_id:   "7"
+    category_id:   "7",
+    photo_url:     "http://www.lessonsunlimited.com/wp-content/uploads/2015/07/421354-flute.jpg"
   },
   {
     title:         "Caxixi",
@@ -118,8 +124,10 @@ instruments = [
     price:         "10",
     location:      "Rua Marquês de São Vicente, 42, Gávea, Rio de Janeiro, RJ",
     user_id:       "3",
-    category_id:   "1"
+    category_id:   "1",
+    photo_url:     "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/Caxixi.jpg/225px-Caxixi.jpg"
   }
 ]
+
 Instrument.create!(instruments)
 puts 'Finished!'
