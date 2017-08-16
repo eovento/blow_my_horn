@@ -58,9 +58,11 @@ users = [
   }
 ]
 User.create!(users)
+
 puts "Finished"
 
 puts "Creating Istruments with pictures"
+
 instruments = [
   {
     title:         "Acoustic Guitar",
@@ -70,7 +72,6 @@ instruments = [
     user_id:       "1",
     category_id:   "2",
     photo_url:     "https://upload.wikimedia.org/wikipedia/commons/6/6e/Classical_Guitar_two_views2.png"
-
   },
   {
     title:         "Fender Stratocaster Guitar",
@@ -106,7 +107,7 @@ instruments = [
     location:      "Rua Casuarina, 15, Itaipava, Petrópolis, RJ",
     user_id:       "5",
     category_id:   "3",
-    photo_url:     "https://www.musik-produktiv.co.uk/pic-010081220xxl/korg-pa4x-musikant-76.jpg"
+    photo_url:     "https://www.musik-produktiv.co.uk/pic-010081220xxl/korg-pa4x-musikant-76.jpg" 
   },
   {
     title:         "Transversal Flute",
@@ -127,8 +128,6 @@ instruments = [
     photo_url:     "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/Caxixi.jpg/225px-Caxixi.jpg"
   }
 ]
+
 Instrument.create!(instruments)
-
-
-
-puts 'done all!'
+puts 'Finished!'
