@@ -10,6 +10,7 @@
       <% end %>
     </div>
   </div>
+  <%= render "datepicker", locals: { instrument: @instrument } %>
   <div class="row">
     <div class="col-sm-12">
       <%= link_to "back to instruments", instruments_path %>
