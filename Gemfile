@@ -34,3 +34,6 @@ end
 # Gemfile
 gem 'devise'
 gem 'omniauth-facebook'
+
+# Gemfile
+gem "geocoder"

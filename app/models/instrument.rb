@@ -5,4 +5,7 @@ class Instrument < ApplicationRecord
   belongs_to :category
 
   validates :user_id, :category_id, :title, :description, :price, :location, presence: true
+
+  geocoded_by :location
+  after_validation :geocode, if: :location_changed?
 end
