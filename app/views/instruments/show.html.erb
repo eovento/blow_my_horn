@@ -7,17 +7,14 @@
       <h1><%= @instrument.title %></h1>
       <p><%= @instrument.description %></p>
       <div id="map" style="width: 100%; height: 300px;"></div>
+      <%= link_to "back to instruments", instruments_path %>
     </div>
     <div class="col-sm-4">
       <%= render "datepicker", locals: { instrument: @instrument } %>
     </div>
   </div>
-  <div class="row">
-    <div class="col-sm-12">
-      <%= link_to "back to instruments", instruments_path %>
-    </div>
-  </div>    
-</div>
+</div>    
+
 
 <% content_for(:after_js) do %>
   <script>
