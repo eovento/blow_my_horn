@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6">
+      <h1><%= @instrument.title %></h1>
+      <p><%= @instrument.description %></p>
+    </div>
+    <div class="col-sm-6">
+      <% if @instrument.photo? %>
+        <%= cl_image_tag @instrument.photo.path, width: 200, height: 300, crop: :fit %>
+      <% end %>
+    </div>
+    <div class="col-sm-6">
+      <p><%= @rental.start_date %>-<%= @rental.end_date %></p>
+    </div>
+  </div>
+</div>
