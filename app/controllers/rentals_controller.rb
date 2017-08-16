@@ -17,9 +17,9 @@ class RentalsController < ApplicationController
     @rental = Rental.new(rental_params)
     @rental.user = current_user
     if @rental.save
-      redirect_to rental_path(@rental)
+      redirect_to instruments_path
     else
-      render :new
+      redirect_to instruments_path
     end
   end
 
@@ -46,7 +46,7 @@ class RentalsController < ApplicationController
   end
 
   def rental_params
-    params.require(:rental).permit(:user_id, :start_date, :end_date, :instrument_id)
+    params.require(:rental).permit(:start_date, :end_date, :instrument_id)
   end
 
 end

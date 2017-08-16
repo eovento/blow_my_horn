@@ -1,18 +1,15 @@
 <div class="container">
   <div class="row">
-    <div class="col-sm-6">
-      <h1><%= @instrument.title %></h1>
-      <p><%= @instrument.description %></p>
-    </div>
-    <div class="col-sm-6">
+    <div class="col-sm-8">
       <% if @instrument.photo? %>
         <%= cl_image_tag @instrument.photo.path, width: 200, height: 300, crop: :fit %>
-      <% end %>
+      <% end%>
+      <h1><%= @instrument.title %></h1>
+      <p><%= @instrument.description %></p>
+       <%= link_to "back to instruments", instruments_path %>
     </div>
-  </div>
-  <div class="row">
-    <div class="col-sm-12">
-      <%= link_to "back to instruments", instruments_path %>
+    <div class="col-sm-4">
+     <%= render "datepicker", locals: { instrument: @instrument } %>
     </div>
   </div>
 </div>
