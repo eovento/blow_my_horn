@@ -1,0 +1,7 @@
+<%= simple_form_for @rental do |f| %>
+  <%= f.input :user_id %>
+  <%= f.input :instrument_id %>
+  <%= f.input :start_date %>
+  <%= f.input :end_date %>
+  <%= f.submit class: "btn btn-primary" %>
+<% end %>
