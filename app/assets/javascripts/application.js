@@ -4,6 +4,6 @@
 //= require jquery-fileupload/basic
 //= require cloudinary/jquery.cloudinary
 //= require attachinary
-//= require_tree .
 //= require moment
 //= require bootstrap-datetimepicker
+//= require_tree .
