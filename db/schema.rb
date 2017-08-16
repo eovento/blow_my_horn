@@ -84,7 +84,6 @@ ActiveRecord::Schema.define(version: 20170815221151) do
     t.string   "phone"
     t.string   "address"
     t.string   "document"
-    t.string   "avatar"
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
