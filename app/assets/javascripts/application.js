@@ -7,3 +7,5 @@
 //= require_tree .
 //= require moment
 //= require bootstrap-datetimepicker
+//= require underscore
+//= require gmaps/google
