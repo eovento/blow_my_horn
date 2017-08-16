@@ -2,18 +2,16 @@ class InstrumentsController < ApplicationController
   before_action :set_instrument, only: [:show, :edit, :update, :destroy]
 
   def index
-    # @instruments = Instrument.all
-    @instruments = Instrument.where.not(latitude: nil, longitude: nil)
-
-    @hash = Gmaps4rails.build_markers(@instruments) do |instrument, marker|
-      marker.lat instrument.latitude
-      marker.lng instrument.longitude
-      # marker.infowindow render_to_string(partial: "/flats/map_box", locals: { flat: flat })
+    @instruments = Instrument.all
+    if params[:query].present?
+      @instruments = Instrument.search_by_title_description(params[:query])
+      @instruments = @instruments.near(params[:location], 50) unless params[:location].blank?
     end
   end
 
   def show
     @instrument = Instrument.find(params[:id])
+    @instruments = Instrument.where.not(latitude: nil, longitude: nil)
     @instrument_coordinates = { lat: @instrument.latitude, lng: @instrument.longitude }
   end
 

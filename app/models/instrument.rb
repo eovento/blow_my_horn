@@ -1,4 +1,7 @@
 class Instrument < ApplicationRecord
+  include PgSearch
+  pg_search_scope :search_by_title_description, :against => [:title, :description]
+
   has_attachment :photo
 
   belongs_to :user

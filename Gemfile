@@ -36,11 +36,9 @@ end
 
 ### CUSTOM GEMS
 
-# Gemfile
 gem 'devise'
 gem 'omniauth-facebook'
-
-# Gemfile
+gem 'pg_search'
 gem "geocoder"
 
 #DateTimePicker
