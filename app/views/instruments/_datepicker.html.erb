@@ -1,7 +1,13 @@
+<h2>Rent</h2>
+
+<%= simple_form_for Rental.new, url: rent_instrument_path(@instrument) do |f| %>
+  <%= f.input :start_date, input_html: {id: "datetimepicker1"}, as: :string %>
+  <%= f.input :end_date, input_html: { id: "datetimepicker2" }, as: :string  %>
+  <%= f.button :submit %>
+<% end %>
 
 
-
-<div class="row">
+<!--<div class="row">
   <div class='col-sm-6'>
     <div class="form-group">
                 <div class='input-group date' id='datetimepicker1'>
@@ -24,21 +30,14 @@
       </div>
     </div>
   </div>
-</div>
+</div>-->
 
 <% content_for(:after_js) do %>
 <script type="text/javascript">
-  $('.glyphicon-calendar').on('click', function(event) {
-    $('#datetimepicker1').datetimepicker( {format: "DD.MM.YYYY" } );
 
-    $('#datetimepicker2').datetimepicker( {format: "DD.MM.YYYY" } );
-  });
+ $('#datetimepicker1').datetimepicker( {format: "DD/MM/YYYY" } );
+ $('#datetimepicker2').datetimepicker( {format: "DD/MM/YYYY" } );
+
+
 </script>
 <% end %>
-
-instrument/1/rent
-
-
-rental?instrument_id=1
-
-simple_for_for(@instrument, instrument_rent_path)
