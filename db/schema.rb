@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
+ActiveRecord::Schema.define(version: 20170816141124) do
+=======
 ActiveRecord::Schema.define(version: 20170815221151) do
+>>>>>>> 5209d613f342094e6552b47b62c115d6a3681e16
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -45,6 +49,8 @@ ActiveRecord::Schema.define(version: 20170815221151) do
     t.datetime "updated_at",  null: false
     t.integer  "user_id"
     t.integer  "category_id"
+    t.float    "latitude"
+    t.float    "longitude"
     t.index ["category_id"], name: "index_instruments_on_category_id", using: :btree
     t.index ["user_id"], name: "index_instruments_on_user_id", using: :btree
   end
