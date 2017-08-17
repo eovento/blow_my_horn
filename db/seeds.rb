@@ -7,6 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 puts "Creating categories"
+Category.destroy_all
 categories = [ "Percussion Instruments", "Guitars", "Keyboards", "Bass", "Brass Instruments", "Orchestral Strings", "Wind & Woodwinds" ]
 
 categories.each do |category|
@@ -18,6 +19,7 @@ puts "Finished!"
 
 
 puts "Creating Users"
+User.destroy_all
 users = [
   {
     email:         "musico@pro.com",
@@ -61,6 +63,7 @@ User.create!(users)
 puts "Finished"
 
 puts "Creating Istruments with pictures"
+Instrument.destroy_all
 instruments = [
   {
     title:         "Acoustic Guitar",
