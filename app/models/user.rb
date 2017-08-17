@@ -27,4 +27,9 @@ class User < ApplicationRecord
 
    return user
   end
+
+  def user_avatar
+    # self.avatar || 
+    self.facebook_picture_url || "http://via.placeholder.com/50x50"
+  end
 end

@@ -1,0 +1,17 @@
+
+<form action="<%= instruments_path %>" method="get">
+  <div class="home-search">
+      <div class="instrument-search-container">
+        <label><span class="fa fa-search"></span> What are you looking for?</label>
+        <input type="text" autocomplete="on" placeholder="e.g. Fender Twin" class="form-control search-term"
+        name="query">
+      </div>
+      <div class="location-search-container">
+        <label><span class="fa fa-map-marker"></span> Where are you looking?</label>
+        <input type="text" placeholder="e.g. Austin, TX" class="form-control location-input" autocomplete="on" name="location">
+      </div>
+      <div class="text-center button-search">
+        <button type="submit" class="btn btn-primary">Search</button>
+      </div>
+  </div>
+</form>

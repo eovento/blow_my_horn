@@ -1,4 +1,34 @@
-<h1><%= @instrument.title %></h1>
-<p><<%= @instrument.description %></p>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-8">
+      <% if @instrument.photo? %>
+        <%= cl_image_tag @instrument.photo.path, width: 600, height: 400, crop: :fit %>
+      <% end %>
+      <h1><%= @instrument.title %></h1>
+      <p><%= @instrument.description %></p>
+      <div id="map" style="width: 100%; height: 300px;"></div>
+      <%= link_to "back to instruments", instruments_path %>
+    </div>
+    <div class="col-sm-4">
+      <%= render "datepicker", locals: { instrument: @instrument } %>
+    </div>
+  </div>
+</div>    
 
-<%= link_to "back to instruments", instruments_path %>
+
+<% content_for(:after_js) do %>
+  <script>
+    $(document).ready(function() {
+      var location = <%= raw @instrument_coordinates.to_json %>;
+      var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 14,
+        center: location
+      });
+      var marker = new google.maps.Marker({
+        position: location,
+        map: map
+      });
+    });
+  </script>
+<% end %>
+ 
