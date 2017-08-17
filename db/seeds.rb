@@ -20,10 +20,10 @@ end
 puts "Finished!"
 
 
-puts "Creating Users"
 User.destroy_all
 Instrument.destroy_all
 
+puts "Creating Istruments with pictures"
 
   instruments = [
     {
@@ -75,6 +75,8 @@ Instrument.destroy_all
       photo_url:     "http://www.lessonsunlimited.com/wp-content/uploads/2015/07/421354-flute.jpg"
     }]
 
+puts "Creating Users"
+
 6.times do |i|
   user = User.new(
   email:  Faker::Internet.email,
@@ -87,10 +89,5 @@ Instrument.destroy_all
   instrument_attributes[:user] = user
   Instrument.create!(instrument_attributes)
 end
-
-puts "Finished"
-
-puts "Creating Istruments with pictures"
-
 
 puts 'Finished!'
