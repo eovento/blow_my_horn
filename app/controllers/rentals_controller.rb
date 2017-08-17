@@ -1,42 +1,17 @@
 class RentalsController < ApplicationController
-  before_action :set_rental, only: [:show, :edit, :update, :destroy]
-
-  def index
-    @rentals = Rental.all
-  end
-
-  def show
-    @instrument = Rental.find(params[:id]).instrument
-  end
-
-  def new
-    @rental = Rental.new
-  end
+  before_action :set_rental, only: [:show, :edit, :update, :destroy, :confirm]
 
   def create
     @rental = Rental.new(rental_params)
     @rental.user = current_user
+    @instrument = Instrument.find(params[:instrument_id])
+    @rental.instrument = @instrument
     if @rental.save
-      redirect_to instruments_path
+      redirect_to instrument_path(@instrument), notice: "Rental created sucessfully"
     else
-      redirect_to instruments_path
+      #flash.now[:alert] = @rental.errors.full_messages.join(", ")
+      render "instruments/show"
     end
-  end
-
-  def edit
-  end
-
-  def update
-    if @rental.update(rental_params)
-      redirect_to rental_path(@rental)
-    else
-      render :edit
-    end
-  end
-
-  def destroy
-    @rental.destroy
-    redirect_to rentals_index
   end
 
   private

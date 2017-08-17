@@ -10,10 +10,10 @@
       <%= link_to "back to instruments", instruments_path %>
     </div>
     <div class="col-sm-4">
-      <%= render "datepicker", locals: { instrument: @instrument } %>
+      <%= render partial: "instruments/datepicker" %>
     </div>
   </div>
-</div>    
+</div>
 
 
 <% content_for(:after_js) do %>
@@ -31,4 +31,4 @@
     });
   </script>
 <% end %>
- 
+
