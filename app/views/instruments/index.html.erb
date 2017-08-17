@@ -8,9 +8,13 @@
       <% @instruments.each do |instrument| %>
       <h2><%= instrument.title %></h2>
       <p><%= instrument.description %></p>
-      <%= link_to "details", instrument_path(instrument) %>
-      <%= link_to	"edit", edit_instrument_path(instrument) %>
-      <%= link_to "delete", instrument_path(instrument), method: :delete %>
+        <%= link_to "details", instrument_path(instrument) %>
+        <% if policy(instrument).update? %>
+          <%= link_to	"edit", edit_instrument_path(instrument) %>
+        <% end %>
+        <% if policy(instrument).destroy? %>
+          <%= link_to "delete", instrument_path(instrument), method: :delete %>
+        <% end %>
       <% end %>
       </div>
     </div>
