@@ -14,6 +14,7 @@ class InstrumentsController < ApplicationController
   end
 
   def show
+    @rental = Rental.new
     @instrument = Instrument.find(params[:id])
     @instruments = Instrument.where.not(latitude: nil, longitude: nil)
     @instrument_coordinates = { lat: @instrument.latitude, lng: @instrument.longitude }

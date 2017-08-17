@@ -1,0 +1,1 @@
+Rental.where("id <> ? AND (('start_date' - DATE ?) * ( DATE ? - 'end_date')) >= 0", rental.id, rental.end_date, rental.start_date).to_a
