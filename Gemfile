@@ -24,6 +24,7 @@ gem 'jquery-rails'
 gem 'sass-rails'
 gem 'simple_form'
 gem 'uglifier'
+gem 'faker'
 
 group :development, :test do
   gem 'pry-byebug'
@@ -44,5 +45,3 @@ gem "geocoder"
 #DateTimePicker
 gem 'momentjs-rails', '>= 2.9.0'
 gem 'bootstrap3-datetimepicker-rails', '~> 4.17.47'
-
-
