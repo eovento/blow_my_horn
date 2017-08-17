@@ -3,9 +3,13 @@ class InstrumentsController < ApplicationController
 
   def index
     @instruments = Instrument.all
+
     if params[:query].present?
-      @instruments = Instrument.search_by_title_description(params[:query])
-      @instruments = @instruments.near(params[:location], 50) unless params[:location].blank?
+      @instruments = @instruments.search_by_title_description(params[:query])
+    end
+
+    if params[:location].present?
+      @instruments = @instruments.near(params[:location], 50)
     end
   end
 
