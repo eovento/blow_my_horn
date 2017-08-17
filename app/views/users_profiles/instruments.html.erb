@@ -1,0 +1,17 @@
+<%= render "tabs" %>
+
+<h3><%= @user.first_name %> has this instruments for rent:</h3>
+<br>
+<% @user.instruments.each do |instrument| %>
+
+  <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://kitt.lewagon.com/placeholder/cities/shanghai');">
+  <div class="card-category">Some text here</div>
+  <div class="card-description">
+    <h2><%= instrument.title %></h2>
+    <p><%= @user.first_name %></p>
+  </div>
+  <%= image_tag @user.user_avatar, class: "card-user" %>
+<!--   <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaita">
+  <a class="card-link" href="#" ></a> -->
+</div>
+<% end %>
