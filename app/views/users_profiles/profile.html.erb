@@ -1,1 +1,86 @@
 <%= render "tabs" %>
+
+<div class="container">
+	<div class="row">
+
+
+		<div class="col-md-7 ">
+
+			<div class="panel panel-default">
+				<div class="panel-heading"></div>
+				<div class="panel-body">
+
+					<div class="box box-info">
+
+						<div class="box-body">
+							<div class="col-sm-6">
+								<div  align="center"> <%= image_tag current_user.user_avatar, class: "img-circle img-responsive profile-image1" %>
+
+
+									<br>
+									<div style="color:#999;" ><%= link_to "Edit Profile", edit_user_registration_path %></div>
+
+
+
+
+
+
+
+								</div>
+
+								<br>
+
+              </div>
+              <div class="col-sm-6">
+                <h4 style="color:#00b1b1;"><%= current_user.first_name %> <%= current_user.last_name %></h4></span>
+                <span><p><%= current_user.bio %></p></span>            
+              </div>
+              <div class="clearfix"></div>
+              <hr style="margin:5px 0 5px 0;">
+
+
+
+
+              <div class="col-sm-5 col-xs-6 tital " >Member since:</div><div class="col-sm-7"><%= current_user.created_at %></div>
+
+              <div class="clearfix"></div>
+              <div class="bot-border"></div>
+
+              <div class="col-sm-5 col-xs-6 tital " >Phone:</div><div class="col-sm-7"><%= current_user.phone %></div>
+
+              <div class="clearfix"></div>
+              <div class="bot-border"></div>
+
+              <div class="col-sm-5 col-xs-6 tital " >Address:</div><div class="col-sm-7"><%= current_user.address %></div>
+
+              <div class="clearfix"></div>
+              <div class="bot-border"></div>
+
+              <div class="col-sm-5 col-xs-6 tital " >Document:</div><div class="col-sm-7"><%= current_user.document %></div>
+
+              <div class="clearfix"></div>
+              <div class="bot-border"></div>
+
+              <div class="col-sm-5 col-xs-6 tital " >Email:</div><div class="col-sm-7"><%= current_user.email %></div>
+
+
+            </div>
+
+          </div>
+
+
+        </div> 
+      </div>
+    </div>  
+
+
+
+
+
+
+
+
+
+
+  </div>
+</div>

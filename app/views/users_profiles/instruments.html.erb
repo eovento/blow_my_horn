@@ -10,16 +10,16 @@
     <div class='product-count'><%= instrument.id %></div>
   </div>
  <% if instrument.photo? %>
-  <%= cl_image_tag instrument.photo.path, width: 200, height: 300, crop: :fill %>
+  <%= cl_image_tag instrument.photo.path, width: 150, height: 70, crop: :fill, class: "product-image hidden-xs" %>
 <% end %>
   <div class='product-body'>
     <h3><%= instrument.title %></h3>
     <p><%= link_to "See more offers from #{@user.first_name}:", "list_user_instruments_path" %></p>
   </div>
   <ul class="list-inline product-controls hidden-sm hidden-xs">
-    <li><a href=""><i class="fa fa-heart"></i></a></li>
-    <li><a href=""><i class="fa fa-share"></i></a></li>
-    <li><a href=""><i class="fa fa-star"></i></a></li>
+    <%= link_to "details", instrument_path(instrument), class: "fa fa-info-circle" %>
+    <%= link_to "edit", edit_instrument_path(instrument), class: "fa fa-pencil" %>
+    <%= link_to "delete", instrument_path(instrument), method: :delete, class: "fa fa-ban" %>
   </ul>
 </div>
 <% end %>
