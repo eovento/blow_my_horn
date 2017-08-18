@@ -14,7 +14,7 @@
 
 						<div class="box-body">
 							<div class="col-sm-6">
-								<div  align="center"> <%= image_tag current_user.user_avatar, class: "img-circle img-responsive profile-image1" %>
+								<div  align="center"> <%= cl_image_tag current_user.user_avatar, class: "img-circle img-responsive profile-image1" %>
 
 
 									<br>
@@ -33,7 +33,7 @@
               </div>
               <div class="col-sm-6">
                 <h4 style="color:#00b1b1;"><%= current_user.first_name %> <%= current_user.last_name %></h4></span>
-                <span><p><%= current_user.bio %></p></span>            
+                <span><p><%= current_user.bio %></p></span>
               </div>
               <div class="clearfix"></div>
               <hr style="margin:5px 0 5px 0;">
@@ -69,9 +69,9 @@
           </div>
 
 
-        </div> 
+        </div>
       </div>
-    </div>  
+    </div>
 
 
 
