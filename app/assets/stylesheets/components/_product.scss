@@ -1,19 +1,21 @@
 .product {
   display: flex;
-  align-items: center;
+  align-items: border-left;
   padding: 20px;
-  border-radius: 3px;
+  border-radius: 1px;
   transition: all 0.15s ease;
 }
 
 /* Body design */
 .product-body {
   flex: 1 1 auto;
+  align-text: left;
 }
 .product-body h3 {
   font-weight: bold;
   font-size: 23px;
   margin-top: 0;
+  text-align: left;
 }
 .product-body p {
   font-weight: lighter;
@@ -94,4 +96,94 @@
 }
 .product-upvote:hover .product-arrow {
   border-bottom: 9px solid #5898f1;
+}
+
+
+.product-list {
+  display: flex;
+  align-items: center;
+}
+
+.message {
+  display: flex;
+  align-items: stretch;
+  padding: 40px;
+  border-bottom: 1px solid rgba(220,224,244,0.4);
+  background: white;
+  box-shadow: 0 2px 2px #333;
+}
+.message:last-child {
+  border-bottom: none;
+}
+.message-body {
+  flex-grow: 1;
+  align-items: left;
+}
+.message-name {
+  padding-left: 30px;
+  min-width: 150px;
+}
+.message-name h3 {
+  font-size: 30px;
+  margin-bottom: 0px;
+  text-align: left;
+  font-weight: bold;
+}
+.message-name p {
+  font-size: 25px;
+  font-weight: lighter;
+  opacity: 0.6;
+  margin-top: 5px;
+}
+.message-body {
+  padding-left: 10px;
+  font-size: 25px;
+  color: rgba(0,0,0,0.7);
+  text-align: center;
+}
+
+.message-body h3{
+  font-family: "Raleway", "Helvetica", "sans-serif";
+  font-weight: bold;
+    font-size: 30px;
+
+}
+.message-body p {
+  margin: 6px 0;
+  font-family: "Open Sans", "Helvetica", "sans-serif";
+  font-weight: lighter;
+
+}
+.message-status {
+  font-size: 14px;
+  font-weight: bold;
+}
+.status.accepted {
+  color: #04A366;
+}
+.status.declined {
+  color: red;
+}
+.status.pending {
+  color: lightgrey;
+}
+
+.btn-medium {
+  color: #999999;
+  border: 1px solid #999999;
+  padding: 20px 15px !important;
+  border-radius: 50px;
+  font-size: 20px !important;
+  text-transform: capitalize;
+  font-weight: lighter;
+  opacity: 0.6;
+  margin-top: 50%;
+  display: inline-block;
+  width: 100px !important;
+}
+
+.btn-medium:hover {
+  opacity: 1;
+  text-decoration: none;
+  color: #999999;
 }
