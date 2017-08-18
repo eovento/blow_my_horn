@@ -7,6 +7,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable, omniauth_providers: [:facebook]
 
+  has_attachment :avatar
+
   def self.find_for_facebook_oauth(auth)
    user_params = auth.slice(:provider, :uid)
    user_params.merge! auth.info.slice(:email, :first_name, :last_name)
@@ -29,7 +31,6 @@ class User < ApplicationRecord
   end
 
   def user_avatar
-    # self.avatar || 
-    self.facebook_picture_url || "http://via.placeholder.com/50x50"
+    self.avatar.try(:path) || self.facebook_picture_url || "http://via.placeholder.com/50x50"
   end
 end
