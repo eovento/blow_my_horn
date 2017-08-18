@@ -11,9 +11,6 @@
 
       <!-- Links when logged in -->
       <%= link_to "Add an instrument!", new_instrument_path, class: "add-button" %>
-      <%= link_to "Host", "#", class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to "Trips", "#", class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to "Messages", "#", class: "navbar-wagon-item navbar-wagon-link" %>
 
       <!-- Avatar with dropdown menu -->
       <div class="navbar-wagon-item">
@@ -26,8 +23,8 @@
               <% end %>
             </li>
             <li>
-              <%= link_to "#" do %>
-                <i class="fa fa-home"></i>  <%= t(".profile", default: "Home") %>
+              <%= link_to list_user_instruments_path(current_user) do %>
+                <i class="fa fa-music"></i>  <%= t(".profile", default: "My Instruments") %>
               <% end %>
             </li>
             <li>
