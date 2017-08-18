@@ -20,6 +20,10 @@
           <%= @instrument.location %>
         </p>
       </div>
+      <div class="product-info user-info">
+        <%= cl_image_tag @instrument.user.user_avatar, class: "img-circle img-responsive" %>
+        <h3> <%= "#{@instrument.user.first_name}  #{@instrument.user.last_name}"%> </h3>
+      </div>
       <div class="product-info product-description">
         <h3>Description:</h3>
         <p><%= @instrument.description %></p>

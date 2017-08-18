@@ -5,7 +5,7 @@
       <h2><%= instrument.title %></h2>
       <p><%= instrument.location %></p>
     </div>
-    <img class="card-user" src="<%= instrument.user.user_avatar %>">
+    <%= cl_image_tag instrument.user.user_avatar, class: "card-user" %>
     <%= link_to "details", instrument_path(instrument), class: "card-link" %>
   </div>
 <% end %>
