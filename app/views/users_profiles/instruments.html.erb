@@ -5,9 +5,9 @@
 <% @user.instruments.each do |instrument| %>
 
 <div class="message" data-instrument-id="<%= instrument.id %>">
-   <% if instrument.photo? %>
-      <%= cl_image_tag instrument.photo.path, width: 400, height: 200, crop: :fill, class: "avatar-large" %>
-    <% end %>
+  <% if instrument.photo? %>
+  <%= cl_image_tag instrument.photo.path, width: 400, height: 200, crop: :fill, class: "avatar-large" %>
+  <% end %>
   <div class="message-name">
     <h3><%= instrument.title %></h3>
     <p><%= instrument.location %></p>
@@ -18,16 +18,16 @@
   </div>
   <div class="message-status">
     <ul class="list-inline product-controls">
-        <li>
-          <%= link_to "details", instrument_path(instrument), class: "btn-medium" %>
-        </li>
-        <li>
-          <%= link_to "edit", edit_instrument_path(instrument), class: "btn-medium" %>
-        </li>
-        <li>
-          <%= link_to "delete", instrument_path(instrument), method: :delete, remote: true, class: "btn-medium" %>
-        </li>
-      </ul>
+      <li>
+        <%= link_to "details", instrument_path(instrument), class: "btn-medium" %>
+      </li>
+      <li>
+        <%= link_to "edit", edit_instrument_path(instrument), class: "btn-medium" %>
+      </li>
+      <li>
+        <%= link_to "delete", instrument_path(instrument), method: :delete, remote: true, class: "btn-medium" %>
+      </li>
+    </ul>
   </div>
 </div>
 
