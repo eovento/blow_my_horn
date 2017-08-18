@@ -1,25 +1,43 @@
 <%= render "tabs" %>
 
-<h3><%= @user.first_name %> has this instruments for rent:</h3>
+<h3>My Instruments</h3>
 <br>
 <% @user.instruments.each do |instrument| %>
 
-<div class="product">
-  <div class='product-upvote'>
-    <div class="product-arrow"></div>
-    <div class='product-count'><%= instrument.id %></div>
-  </div>
- <% if instrument.photo? %>
-  <%= cl_image_tag instrument.photo.path, width: 150, height: 70, crop: :fill, class: "product-image hidden-xs" %>
-<% end %>
-  <div class='product-body'>
+<div class="message" data-instrument-id="<%= instrument.id %>">
+  <% if instrument.photo? %>
+  <%= cl_image_tag instrument.photo.path, width: 400, height: 200, crop: :fill, class: "avatar-large" %>
+  <% end %>
+  <div class="message-name">
     <h3><%= instrument.title %></h3>
-    <p><%= link_to "See more offers from #{@user.first_name}:", "list_user_instruments_path" %></p>
+    <p><%= instrument.location %></p>
   </div>
-  <ul class="list-inline product-controls hidden-sm hidden-xs">
-    <%= link_to "details", instrument_path(instrument), class: "fa fa-info-circle" %>
-    <%= link_to "edit", edit_instrument_path(instrument), class: "fa fa-pencil" %>
-    <%= link_to "delete", instrument_path(instrument), method: :delete, class: "fa fa-ban" %>
-  </ul>
+  <div class="message-body">
+    <h3>Price</h3>
+    <p>$ <%= instrument.price %></p>
+  </div>
+  <div class="message-status">
+    <ul class="list-inline product-controls">
+      <li>
+        <%= link_to "details", instrument_path(instrument), class: "btn-medium" %>
+      </li>
+      <li>
+        <%= link_to "edit", edit_instrument_path(instrument), class: "btn-medium" %>
+      </li>
+      <li>
+        <%= link_to "delete", instrument_path(instrument), method: :delete, remote: true, class: "btn-medium" %>
+      </li>
+    </ul>
+  </div>
 </div>
+
 <% end %>
+
+
+
+
+
+
+
+
+

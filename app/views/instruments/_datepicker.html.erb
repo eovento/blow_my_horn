@@ -1,4 +1,5 @@
 <%= simple_form_for [@instrument, @rental] do |f| %>
+<<<<<<< HEAD
   <div class="row">
     <div class="col-sm-6">
       <%= f.input :start_date, input_html: {id: "datetimepicker1"}, as: :string %>
@@ -13,6 +14,19 @@
 
 <% content_for(:after_js) do %>
   <script type="text/javascript">
+=======
+  <%= f.input :start_date, input_html: {id: "datetimepicker1"}, as: :string %>
+  <%= f.input :end_date, input_html: { id: "datetimepicker2" }, as: :string  %>
+  <%= f.button :submit %>
+<% end %>
+
+
+<% content_for(:after_js) do %>
+<script type="text/javascript">
+
+ $('#datetimepicker1').datetimepicker( {format: "DD/MM/YYYY", disabledDates: ["20/08/2017" ] } );
+ $('#datetimepicker2').datetimepicker( {format: "DD/MM/YYYY" } );
+>>>>>>> bf5908975c3a49f81690f4e6a096c5f2e9979fc2
 
    $('#datetimepicker1').datetimepicker( {format: "DD/MM/YYYY" } );
    $('#datetimepicker2').datetimepicker( {format: "DD/MM/YYYY" } );
