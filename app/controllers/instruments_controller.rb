@@ -13,6 +13,11 @@ class InstrumentsController < ApplicationController
     if params[:location].present?
       @instruments = @instruments.near(params[:location], 50)
     end
+
+    if params[:category].present?
+      @instruments = Instrument.search_by_category(params[:category])
+    end
+
   end
 
   def show
