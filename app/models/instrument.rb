@@ -11,4 +11,8 @@ class Instrument < ApplicationRecord
 
   geocoded_by :location
   after_validation :geocode, if: :location_changed?
+
+  def self.search_by_category(category)
+    Category.where(name: category.split(", ")).map(&:instruments).flatten!
+  end
 end

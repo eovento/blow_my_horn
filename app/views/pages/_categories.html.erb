@@ -1,18 +1,26 @@
-<div class="home-list-grid">
-  <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://kitt.lewagon.com/placeholder/cities/shanghai');">
-    <div class="card-category">Strings</div>
-    <a class="card-link" href="#" ></a>
-  </div>
-  <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://kitt.lewagon.com/placeholder/cities/shanghai');">
-    <div class="card-category">Drums</div>
-    <a class="card-link" href="#" ></a>
-  </div>
-  <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://kitt.lewagon.com/placeholder/cities/shanghai');">
-    <div class="card-category">Winds</div>
-    <a class="card-link" href="#" ></a>
-  </div>
-  <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('http://publicdomainarchive.com/wp-content/uploads/2014/03/public-domain-images-free-stock-photos-high-quality-resolution-downloads-around-the-house-22-1000x666.jpg');">
-    <div class="card-category">Keyboards</div>
-    <a class="card-link" href="#" ></a>
+
+<div class="card-collection" style= "padding-right: 15px; padding-left: 15px;">
+  <h3>Featured instruments categories</h3>
+  <div class="home-list-grid">
+    <%=link_to instruments_path(category: "Guitars, Bass, Orchestral Strings")  do %>
+    <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('http://res.cloudinary.com/dohfsgcbx/image/upload/v1503060073/pexels-photo-258283_w39qoe.jpg');">
+      <div class="card-category">Strings</div>
+    </div>
+    <% end %>
+    <%=link_to instruments_path(category: "Percussion Instruments") do %>
+    <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('http://res.cloudinary.com/dohfsgcbx/image/upload/v1503060086/pexels-photo-241687_nmcloy.jpg');">
+      <div class="card-category">Drums</div>
+    </div>
+    <% end %>
+    <%=link_to instruments_path(category: "Brass Instruments, Wind & Woodwinds") do %>
+    <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('http://res.cloudinary.com/dohfsgcbx/image/upload/v1503060101/saxophone-music-gold-gloss-45243_gf2n5x.jpg');">
+      <div class="card-category">Winds</div>
+    </div>
+    <% end %>
+    <%=link_to instruments_path(category: "Keyboards") do %>
+    <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('http://res.cloudinary.com/dohfsgcbx/image/upload/v1503060111/public-domain-images-free-stock-photos-high-quality-resolution-downloads-around-the-house-22-1000x666_naolcf.jpg');">
+      <div class="card-category">Keyboards</div>
+    </div>
+    <% end %>
   </div>
 </div>
