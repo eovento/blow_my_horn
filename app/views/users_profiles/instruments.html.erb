@@ -4,34 +4,7 @@
 <br>
 <% @user.instruments.each do |instrument| %>
 
-<!--<div class="product-list">
-  <div class="product">
-    <% if instrument.photo? %>
-      <%= cl_image_tag instrument.photo.path, width: 800, height: 200, crop: :fill, class: "product-image hidden-xs" %>
-    <% end %>
-  </div>
-  <div class="product-body">
-    <h3><%= instrument.title %></h3>
-    <p><%= instrument.location %></p>
-  </div>
-  <div class="product-body">
-    <h3>Price</h3>
-    <p><%= instrument.price %></p>
-  </div>
-  <ul class="list-inline product-controls">
-    <li>
-      <%= link_to "details", instrument_path(instrument), class: "fa fa-info-circle" %>
-    </li>
-    <li>
-      <%= link_to "edit", edit_instrument_path(instrument), class: "fa fa-pencil" %>
-    </li>
-    <li>
-      <%= link_to "delete", instrument_path(instrument), method: :delete, class: "fa fa-ban" %>
-    </li>
-  </ul>
-</div>-->
-
-<div class="message">
+<div class="message" data-instrument-id="<%= instrument.id %>">
    <% if instrument.photo? %>
       <%= cl_image_tag instrument.photo.path, width: 400, height: 200, crop: :fill, class: "avatar-large" %>
     <% end %>
@@ -52,13 +25,11 @@
           <%= link_to "edit", edit_instrument_path(instrument), class: "btn-medium" %>
         </li>
         <li>
-          <%= link_to "delete", instrument_path(instrument), method: :delete, class: "btn-medium" %>
+          <%= link_to "delete", instrument_path(instrument), method: :delete, remote: true, class: "btn-medium" %>
         </li>
       </ul>
   </div>
 </div>
-
-
 
 <% end %>
 

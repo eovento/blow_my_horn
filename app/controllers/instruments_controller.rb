@@ -54,7 +54,10 @@ class InstrumentsController < ApplicationController
 
   def destroy
     @instrument.destroy
-    redirect_to instruments_path
+    respond_to do |format|
+            format.html { redirect_to list_user_instruments_path(current_user) }
+            format.js  # <-- idem
+          end
   end
 
   private
