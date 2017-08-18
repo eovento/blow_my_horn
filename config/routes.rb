@@ -10,9 +10,13 @@ Rails.application.routes.draw do
 
   mount Attachinary::Engine => "/attachinary"
 
-  post "instruments/:id/rent", to: "rentals#create", as: "rent_instrument"
-  resources :instruments
-  resources :rentals
+  get "instruments/:id/rent/confirm", to: "rentals#confirm", as: "confirm_rental"
+  get "instruments/rent/error", to: "rentals#error", as: "rental_error"
+
+  resources :instruments do
+    resources :rentals, only: [:create]
+  end
+
   devise_for :users,
     controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
 end

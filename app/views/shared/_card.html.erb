@@ -1,9 +1,11 @@
-<div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://kitt.lewagon.com/placeholder/cities/shanghai');">
-  <div class="card-category">Some text here</div>
-  <div class="card-description">
-    <h2>Some text here</h2>
-    <p>Some text here</p>
+<% @instruments.each do |instrument| %>
+  <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path instrument.photo.public_id %>')">
+    <div class="card-category"><%= instrument.category.name %></div>
+    <div class="card-description">
+      <h2><%= instrument.title %></h2>
+      <p><%= instrument.location %></p>
+    </div>
+    <img class="card-user" src="<%= instrument.user.user_avatar %>">
+    <%= link_to "details", instrument_path(instrument), class: "card-link" %>
   </div>
-  <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
-  <a class="card-link" href="#" ></a>
-</div>
+<% end %>

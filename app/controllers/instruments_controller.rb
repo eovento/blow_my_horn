@@ -1,15 +1,27 @@
 class InstrumentsController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:index, :show]
+
   before_action :set_instrument, only: [:show, :edit, :update, :destroy]
 
   def index
     @instruments = Instrument.all
+
     if params[:query].present?
-      @instruments = Instrument.search_by_title_description(params[:query])
-      @instruments = @instruments.near(params[:location], 50) unless params[:location].blank?
+      @instruments = @instruments.search_by_title_description(params[:query])
     end
+
+    if params[:location].present?
+      @instruments = @instruments.near(params[:location], 50)
+    end
+
+    if params[:category].present?
+      @instruments = Instrument.search_by_category(params[:category])
+    end
+
   end
 
   def show
+    @rental = Rental.new
     @instrument = Instrument.find(params[:id])
     @instruments = Instrument.where.not(latitude: nil, longitude: nil)
     @instrument_coordinates = { lat: @instrument.latitude, lng: @instrument.longitude }
