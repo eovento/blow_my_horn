@@ -1,6 +1,6 @@
 <h2>Rent</h2>
 
-<%= simple_form_for Rental.new, url: rent_instrument_path(@instrument) do |f| %>
+<%= simple_form_for [@instrument, @rental] do |f| %>
   <%= f.input :start_date, input_html: {id: "datetimepicker1"}, as: :string %>
   <%= f.input :end_date, input_html: { id: "datetimepicker2" }, as: :string  %>
   <%= f.button :submit %>
