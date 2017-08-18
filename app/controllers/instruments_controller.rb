@@ -54,7 +54,7 @@ class InstrumentsController < ApplicationController
 
   def destroy
     @instrument.destroy
-    redirect_to instruments_index
+    redirect_to instruments_path
   end
 
   private
