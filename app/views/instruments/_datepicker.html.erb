@@ -1,43 +1,21 @@
-<h2>Rent</h2>
-
 <%= simple_form_for [@instrument, @rental] do |f| %>
-  <%= f.input :start_date, input_html: {id: "datetimepicker1"}, as: :string %>
-  <%= f.input :end_date, input_html: { id: "datetimepicker2" }, as: :string  %>
-  <%= f.button :submit %>
+  <div class="row">
+    <div class="col-sm-6">
+      <%= f.input :start_date, input_html: {id: "datetimepicker1"}, as: :string %>
+    </div>
+    <div class="col-sm-6">
+      <%= f.input :end_date, input_html: { id: "datetimepicker2" }, as: :string %>
+    </div>
+  </div>
+
+  <%= f.button :submit, class: "btn btn-primary btn-block" %>
 <% end %>
 
-
-<!--<div class="row">
-  <div class='col-sm-6'>
-    <div class="form-group">
-                <div class='input-group date' id='datetimepicker1'>
-                    <input type='text' class="form-control" />
-                    <span class="input-group-addon">
-                        <span class="glyphicon glyphicon-calendar"></span>
-                    </span>
-                </div>
-    </div>
-  </div>
-</div>
-<div class="row">
-  <div class='col-sm-6'>
-    <div class="form-group">
-      <div class='input-group date' id='datetimepicker2'>
-        <input type='text' class="form-control" />
-          <span class="input-group-addon">
-            <span class="glyphicon glyphicon-calendar"></span>
-          </span>
-      </div>
-    </div>
-  </div>
-</div>-->
-
 <% content_for(:after_js) do %>
-<script type="text/javascript">
+  <script type="text/javascript">
 
- $('#datetimepicker1').datetimepicker( {format: "DD/MM/YYYY" } );
- $('#datetimepicker2').datetimepicker( {format: "DD/MM/YYYY" } );
+   $('#datetimepicker1').datetimepicker( {format: "DD/MM/YYYY" } );
+   $('#datetimepicker2').datetimepicker( {format: "DD/MM/YYYY" } );
 
-
-</script>
+  </script>
 <% end %>
